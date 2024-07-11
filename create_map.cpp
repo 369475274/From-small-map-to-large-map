@@ -11,7 +11,7 @@ void grid( ros::NodeHandle n,double x, double y, int height,int width)
   while (ros::ok()) {
     tf::StampedTransform transform;
     try {
-      listener.lookupTransform("map", "base_footprint", ros::Time(0), transform);
+      listener.lookupTransform("map", "base_footprint"， ros::Time(0), transform);
       x = transform.getOrigin().x();
      y = transform.getOrigin().y();
     } 
@@ -61,7 +61,7 @@ void grid( ros::NodeHandle n,double x, double y, int height,int width)
         pub1.publish(msg1);
         ROS_INFO("%f,%f",x,y);
         r.sleep();
-        ros::Duration(1.0).sleep();
+        ros::Duration(1.0)。sleep();
 }
 }
 int main(int argc, char** argv) {
